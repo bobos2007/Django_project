@@ -45,7 +45,11 @@
 
                         </header>
                         <!-- Preview image figure-->
+                        {% if post.head_image %}
                         <figure class="mb-4"><img class="img-fluid rounded" src="{{post.head_image.url}}" alt="..." /></figure>
+                        {% else %}
+                        <img class="card-img-top" src="https://picsum.photos/seed/{{post.id}}/600/350" alt={{p.title}} />
+                        {% endif %}
                         <!-- Post content-->
                         <section class="mb-5">
                             <p class="fs-5 mb-4">{{post.content}}</p>
