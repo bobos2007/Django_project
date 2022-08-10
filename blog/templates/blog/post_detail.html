@@ -20,7 +20,7 @@
         {% endif %}
 
         <!-- Post meta content-->
-        <div class="text-muted fst-italic mb-2">{{post.created_at}}</div>
+        <div class="text-muted fst-italic mb-2">{{post.created_at}} <a href="#!">{{post.author|upper}}</a></div>
 
     </header>
     <!-- Preview image figure-->
@@ -43,7 +43,7 @@
             <i class="fa-solid fa-file"></i>
             {% endif %}
             {{post.get_file_name}}</a>
-
+        
         {% endif %}
 
     </section>
