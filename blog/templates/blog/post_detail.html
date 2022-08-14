@@ -15,6 +15,12 @@
         <!-- Post title-->
         <h1 class="fw-bolder mb-1">{{post.title}}</h1>
 
+        {% if post.category %}
+        <span class="badge badge-success float-right">{{post.category}}</span>
+        {% else %}
+        <span class="badge badge-success float-right">미분류</span>
+         {% endif %}
+
         {% if post.hook_text %}
         <h5 class="text-muted">{{post.hook_text}}</h5>
         {% endif %}
