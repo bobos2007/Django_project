@@ -8,6 +8,9 @@
         {% if category %}
             <span class="badge badge-success">{{ category }}</span>
         {% endif %}
+        {% if tag %}
+            <h3><span class="badge badge-success"> <i class="fa-solid fa-tag"></i>{{ tag }} ({{tag.post_set.count}}) </span></h3>
+        {% endif %}
     </h1>
 
 {% for p in post_list %}
