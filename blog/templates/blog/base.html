@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-
+{% load socialaccount %}
 <html lang="ko">
 
 <head>
@@ -21,6 +21,12 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="./about_me.html">
                         about_me
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                 <li class="nav-item active">
+                    <a class="nav-link" href="{% provider_login_url 'google'%}">
+                        Google로 login
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
