@@ -16,6 +16,10 @@
     <header class="mb-4">
         <!-- Post title-->
         <h1 class="fw-bolder mb-1">{{post.title}}</h1>
+           {%if user.is_authenticated and user == p.author%}
+            <a type="button" href="/blog/update_post/{{post.pk}}" class="btn btn-info btn-small float-right"><i class="fa-solid fa-pen"></i>&nbsp;&nbsp;Edit Post</a>
+           {% endif %}
+
 
         {% if post.category %}
         <span class="badge badge-success float-right">{{post.category}}</span>
@@ -27,10 +31,18 @@
         <h5 class="text-muted">{{post.hook_text}}</h5>
         {% endif %}
 
+
+
         <!-- Post meta content-->
+
+
         <div class="text-muted fst-italic mb-2">{{post.created_at}} <a href="#!">{{post.author|upper}}</a></div>
 
     </header>
+
+
+
+
     <!-- Preview image figure-->
     {% if post.head_image %}
     <figure class="mb-4"><img class="img-fluid rounded" src="{{post.head_image.url}}" alt="..." /></figure>
@@ -61,6 +73,10 @@
             {% endif%}
     </section>
 </article>
+
+
+
+
 
 <section class="mb-5">
     <div class="card bg-light">
